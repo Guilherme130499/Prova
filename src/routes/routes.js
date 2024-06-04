@@ -42,3 +42,4 @@ router.put('/clientes/:id', validarCliente, ClienteController.atualizar)
 router.delete('clientes/:id', ClienteController.excluir)
 
 module.exports = router
+//valeu
