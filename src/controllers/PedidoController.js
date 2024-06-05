@@ -24,7 +24,8 @@ async function atualizar(req, res) {
         if (pedidoAtualizado) {
             res.json(
                 {
-                    mensagem: "Pedido atualizado com sucesso", pedidoAtualizado
+                    mensagem: "Pedido atualizado com sucesso", 
+                    pedidoAtualizado
                 }
             )
         }   else {
@@ -37,7 +38,8 @@ async function excluir(req, res) {
         if (pedidoExcluido) {
             res.json(
                 {
-                    mensagem: "Pedido excluido com sucesso!", pedidoExcluido
+                    mensagem: "Pedido excluido com sucesso!", 
+                    pedidoExcluido
                 }
             )
         }   else {

@@ -10,9 +10,13 @@ const schema = yup.object().shape(
            .string("Campo precisa ser um texto")
            .required("Campo obrigatório"),
 
-        admissao: yup
-           .date("Data inválida")
-           .required("Campo obrigatório"),
+        endereco: yup
+         .string("Campo precisa ser um texto"),
+
+         email: yup
+            .string("Campo precisa ser um texto")
+            .email("E-mail inválido")
+            .required("Campo obrigatório"),
 
         telefone: yup
          .string("Campo precisa ser um texto")
@@ -36,7 +40,7 @@ function validarCliente(req, res, next) {
             res.status(400).json(
                 {
                     mensagem: "Erro na validacao dos campos!",
-                    errors
+                    erros
                 }            
     )
     })

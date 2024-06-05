@@ -2,12 +2,25 @@ const mongoose = require('mongoose')
 //Importa a biblioteca mongoose
 
 //Define a estrutura e as regras de validação para documentos em uma coleção do MongoDB
-const schema = new mongoose.Schema({
+const schema = new mongoose.Schema(
+    {
     
-    pedido: {
+    cardapio: {
         type: mongoose.Types.ObjectId,
         ref: 'cardapio',
-        required: false
+        required: true
+    }, 
+
+    pedido: {
+        type: mongoose.Types.ObjectId,
+        ref: 'pedido',
+        required: true
+    },
+
+    cliente: {
+        type: mongoose.Types.ObjectId,
+        ref: 'cliente',
+        required: true
     },
     
     dataAtendimento: {
@@ -18,19 +31,7 @@ const schema = new mongoose.Schema({
     horaAtendimento: {
         type: String,
         required: true
-    },        
-
-    cardapio: {
-        type: String,
-        required: true
-    },
-
-    avaliacaoAtendimento: {
-        type: Number,
-        required: false,
-        min: 1,
-        max: 5
-    },
+    },               
     
 }, { timestamps: true })
 //Adiciona automaticamente os campos 'createdAt' e 'updateAt'

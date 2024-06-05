@@ -21,7 +21,7 @@ const schema = new mongoose.Schema({
         bairro: String,
         logradouro: String,
         numero: String,
-        complemento: String
+        complemento: String,        
     },
 
     email: {

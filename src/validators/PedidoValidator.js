@@ -2,21 +2,24 @@ const yup = require('yup')
 
 const schema = yup.object().shape(
     {
-        nome: yup
+        atendimento: yup
             .string("Campo precisa ser um texto")
             .required("Campo obrigatório"),
         
-        cpf: yup
+        produtos: yup
            .string("Campo precisa ser um texto")
            .required("Campo obrigatório"),
 
-        admissao: yup
-           .date("Data inválida")
+        valorPedido: yup
+           .string("Campo precisa ser um texto")
            .required("Campo obrigatório"),
 
-        telefone: yup
+        pagamento: yup
          .string("Campo precisa ser um texto")
-         .required("Campo obrigatório"),                      
+         .required("Campo obrigatório"),
+         
+        cupomDesconto: yup
+         .string("Campo precisa ser um texto"),         
     }
 )
 
@@ -36,7 +39,7 @@ function validarPedido(req, res, next) {
             res.status(400).json(
                 {
                     mensagem: "Erro na validacao dos campos!",
-                    errors
+                    erros
                 }            
     )
     })

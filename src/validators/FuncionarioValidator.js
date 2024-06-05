@@ -14,21 +14,25 @@ const schema = yup.object().shape(
            .date("Data inválida")
            .required("Campo obrigatório"),
 
+        funcao: yup
+            .string("Campo precisa ser um texto")
+            .required('Campo obrigatório'),
+
         telefone: yup
          .string("Campo precisa ser um texto")
-         .required("Campo obrigatório"),                      
+         .required("Campo obrigatório"),
     }
 )
 
 function validarFuncionario(req, res, next) {
-    schema.validate(req.body, {abortEarly: false })
+    schema.validate(req.body, { abortEarly: false })
     .then(() => next())
     .catch(err => {
         
             const erros = err.inner.map(e => {
                 const erro = {
                     campo: e.path,
-                    erros: e.erros
+                    erros: e.errors
                 }
                 return erro
             })
@@ -36,7 +40,7 @@ function validarFuncionario(req, res, next) {
             res.status(400).json(
                 {
                     mensagem: "Erro na validacao dos campos!",
-                    errors
+                    erros
                 }            
     )
     })

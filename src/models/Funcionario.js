@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
     
     nome: {
         type: String,
-        required:true
+        required: true
     },
 
     cpf: {
@@ -18,6 +18,11 @@ const schema = new mongoose.Schema({
         type: Date,
         required: true
     },    
+
+    funcao: {
+        type: String,
+        required: true
+    },
 
     telefone: {
         type: String,

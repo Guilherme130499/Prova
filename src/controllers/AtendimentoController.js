@@ -21,7 +21,7 @@ async function criar(req, res) {
 
 async function atualizar(req, res) {
     const atendimentoAtualizado = await Atendimento.findByIdAndUpdate(req.params.id, req.body,{ new: true })
-        if (atendimentooAtualizado) {
+        if (atendimentoAtualizado) {
             res.json(
                 {
                     mensagem: "Atendimento atualizado com sucesso", atendimentoAtualizado
