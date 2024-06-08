@@ -2,7 +2,7 @@ const yup = require('yup')
 
 const schema = yup.object().shape(
     {
-        atendimento: yup
+        cliente: yup
             .string("Campo precisa ser um texto")
             .required("Campo obrigatório"),
         
@@ -10,16 +10,21 @@ const schema = yup.object().shape(
            .string("Campo precisa ser um texto")
            .required("Campo obrigatório"),
 
-        valorPedido: yup
+        statusPedido: yup
            .string("Campo precisa ser um texto")
            .required("Campo obrigatório"),
 
         pagamento: yup
          .string("Campo precisa ser um texto")
          .required("Campo obrigatório"),
-         
+
         cupomDesconto: yup
-         .string("Campo precisa ser um texto"),         
+         .string("Campo precisa ser um texto"), 
+
+        valorPedido: yup
+           .string("Campo precisa ser um texto")
+           .required("Campo obrigatório"),        
+                
     }
 )
 

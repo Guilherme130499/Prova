@@ -10,17 +10,22 @@ const schema = yup.object().shape(
            .string("Campo precisa ser um texto")
            .required("Campo obrigatório"),
 
-        admissao: yup
+        funcao: yup
+           .string("Campo precisa ser um texto")
+           .required('Campo obrigatório'),        
+
+        telefone: yup
+        .string("Campo precisa ser um texto")
+        .required("Campo obrigatório"),
+
+        dataAdmissao: yup
            .date("Data inválida")
            .required("Campo obrigatório"),
 
-        funcao: yup
+        salario: yup
             .string("Campo precisa ser um texto")
-            .required('Campo obrigatório'),
+            .required("Campo obrigatório"),
 
-        telefone: yup
-         .string("Campo precisa ser um texto")
-         .required("Campo obrigatório"),
     }
 )
 

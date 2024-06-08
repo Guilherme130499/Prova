@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+// perguntar ao professor sobre puxar o usuario pra dentro de funcionario
 const schema = new mongoose.schema(
     {
         nome:{
@@ -20,3 +20,4 @@ const schema = new mongoose.schema(
 const Usuario = mongoose.model('usuario', schema)
 
 module.exports = Usuario
+

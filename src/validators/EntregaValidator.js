@@ -2,13 +2,17 @@ const yup = require('yup')
 
 const schema = yup.object().shape(
     {
-        cliente: yup
-            .string("Campo precisa ser um texto")
-            .required("Campo obrigatório"),
-        
         pedido: yup
             .string("Campo precisa ser um texto")
             .required("Campo obrigatório"),
+            
+        cliente: yup
+            .string("Campo precisa ser um texto")
+            .required("Campo obrigatório"),
+            
+        tokenConfirmacao: yup
+        .string("Campo precisa ser um texto")
+        .required("Campo obrigatório"),
 
         dataEntrega: yup
             .date("Data inválida")
@@ -18,9 +22,6 @@ const schema = yup.object().shape(
             .string("Campo precisa ser um texto")
             .required('Campo obrigatório'),
 
-        statusPedido: yup
-            .string("Campo precisa ser um texto")
-            .required("Campo obrigatório"),
     }
 )
 

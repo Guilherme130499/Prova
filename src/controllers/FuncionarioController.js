@@ -41,7 +41,7 @@ async function excluir(req, res) {
                     mensagem: "Funcionario excluido com sucesso!", funcionarioExcluido
                 }
             )
-        }   else {
+        } else {
             res.status(404).json({ mensagem: "Funcionario não encontrado!"})
         }
 }

@@ -4,21 +4,21 @@ const mongoose = require('mongoose')
 //Define a estrutura e as regras de validação para documentos em uma coleção do MongoDB
 const schema = new mongoose.Schema(
     {
-    atendimento: {
+    cliente: {
         type: mongoose.Types.ObjectId,
-        ref: 'atendimento',
+        ref: 'cliente',
         required: true
         },         
-    
+
     produtos: {
         type: String,        
         required: true
     },
     
-    valorPedido: {
-        type: String,        
+    statusPedido: {
+        type: String,
         required: true
-    },    
+    },
 
     pagamento: {
         type: String,        
@@ -28,7 +28,12 @@ const schema = new mongoose.Schema(
     cupomDesconto: {
         type: String,
         required: false
-    },   
+    }, 
+
+    valorPedido: {
+        type: String,        
+        required: true
+    },      
     
 }, 
 { timestamps: true })
