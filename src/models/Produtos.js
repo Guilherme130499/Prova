@@ -2,14 +2,7 @@ const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema (
     {
-/* perguntar ao professor como fazer que o cliente escolha os produtos 
-que estão no "cardápio" pré definidos da pizzaria e definir o valor de cada produto
-para aparecer assim que o produto for escolhido
 
-perguntar ao professor como somar cada pedido para constar no valor total do pedido
-
-Perguntar como definir os tamanhos para cada produto ex: pequeno, médio e grande
-*/
     nome: {
         type: String,
         required: true
@@ -21,7 +14,7 @@ Perguntar como definir os tamanhos para cada produto ex: pequeno, médio e grand
     },
 
     valorProduto : {
-        type: String,
+        type: Number,
         require: true
     },
 

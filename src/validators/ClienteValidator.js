@@ -11,7 +11,8 @@ const schema = yup.object().shape(
            .required("Campo obrigatório"),
 
         endereco: yup
-         .string("Campo precisa ser um texto"),
+         .string("Campo precisa ser um texto")
+         .required("Campo obrigatório"),
 
          email: yup
             .string("Campo precisa ser um texto")

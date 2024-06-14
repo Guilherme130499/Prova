@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "40c24d5f-0b34-42a5-82f6-46b0ffc3f6be",
+		"name": "prova-empresas",
+		"description": "Está é uma collection de requisições do projeto final de backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33276890"
+	},
+	"item": [
+		{
+			"name": "Funcionarios",
+			"item": [
+				{
+					"name": "criandoFuncionarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Teste4\",\r\n    \"cpf\": \"1111111111111\",\r\n    \"funcao\": \"Carteiro\",\r\n    \"telefone\": \"061944444444\",    \r\n    \"dataAdmissao\": \"04-04-2004\",\r\n    \"salario\": \"3000,04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/funcionarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarTodosFuncionarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/funcionarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizandoFuncionario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Teste2\",\r\n    \"cpf\": \"100000000055\",\r\n    \"funcao\": \"Segurança\",\r\n    \"telefone\": \"061955555555\",    \r\n    \"dataAdmissao\": \"05-05-2005\",\r\n    \"salario\": \"1000,05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/funcionarios/666a54f188a5e56d037d216f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funcionarios",
+								"666a54f188a5e56d037d216f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarFuncionarioPorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/funcionarios/666a54f188a5e56d037d216f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funcionarios",
+								"666a54f188a5e56d037d216f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletandoFuncionarios",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/funcionarios/666b76372397c6cb452279bc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funcionarios",
+								"666b76372397c6cb452279bc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Nesta pasta temos as opções de CRIAR, ATUALIZAR, DELETAR, BUSCAR TODOS OU POR ID os funcionários cadastrados atravéz das requisições."
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "criandoPedidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": \"666b7a626c980abe9e14fb24\",\r\n    \"funcionario\": \"666b7a446c980abe9e14fb21\",\r\n    \"produtos\": [\r\n        { \"item\": \"666b7a916c980abe9e14fb27\" }\r\n        \r\n    ],\r\n    \"statusPedido\": \"Pendente\",\r\n    \"pagamento\": \"Cartão de Crédito\",\r\n    \"cupomDesconto\": \"PROMO10\",\r\n    \"valorPedido\": 50.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarTodosPedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizandoPedidos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": \"6663dc8ecb436e09b5f9499d\",\r\n    \"produtos\": \"Pizza Calabresa\",\r\n    \"statusPedido\": \"A caminho\",\r\n    \"pagamento\": \"Crédito\",    \r\n    \"valorPedido\": \"35,00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/pedidos/6663e0a6cb436e09b5f949aa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos",
+								"6663e0a6cb436e09b5f949aa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarPedidoPorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/pedidos/6663e059cb436e09b5f949a8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos",
+								"6663e059cb436e09b5f949a8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletandoPedido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/pedidos/6663e059cb436e09b5f949a8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos",
+								"6663e059cb436e09b5f949a8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Nesta pasta temos as opções de CRIAR, ATUALIZAR, DELETAR, BUSCAR TODOS OU POR ID os pedidos cadastrados atravéz das requisições."
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "criandoClientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Antonio\",\r\n    \"cpf\": \"00000000009\",\r\n    \"endereco\": \"Qnp 15 conjunto J casa 12\",\r\n    \"email\": \"Capotinha@gmail.com\",    \r\n    \"telefone\": \"00000000009\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/Clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarTodosClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizandoClientes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Luiz Perna torta\",\r\n    \"cpf\": \"00000000000\",\r\n    \"endereco\": \"qnp0 ConjuntoA Casa1\",\r\n    \"email\": \"Luiz@gmail.com\",    \r\n    \"telefone\": \"00000000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/Clientes/666004b6a7532d3ba3c3252a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Clientes",
+								"666004b6a7532d3ba3c3252a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarClientesPorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Clientes/66600484a7532d3ba3c32528",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Clientes",
+								"66600484a7532d3ba3c32528"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletandoClientes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Clientes/6660050fa7532d3ba3c3252e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Clientes",
+								"6660050fa7532d3ba3c3252e"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Nesta pasta temos as opções de CRIAR, ATUALIZAR, DELETAR, BUSCAR TODOS OU POR ID os clientes cadastrados atravéz das requisições."
+		},
+		{
+			"name": "Entregas",
+			"item": [
+				{
+					"name": "criandoEntregas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pedido\": \"666b7badc7768fd2248656bc\",\r\n    \"cliente\": \"666b7a626c980abe9e14fb24\",\r\n    \"tokenConfirmacao\": \"158\",\r\n    \"dataEntrega\": \"08-01-2020\",    \r\n    \"horaEntrega\": \"23:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/Entregas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Entregas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarTodosEntregas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Entregas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Entregas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizandoEntregas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pedido\": \"6663e0a6cb436e09b5f949aa\",\r\n    \"cliente\": \"6663dc8ecb436e09b5f9499d\",\r\n    \"tokenConfirmacao\": \"01\",\r\n    \"dataEntrega\": \"01-06-2020\",    \r\n    \"horaEntrega\": \"15:45\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/Entregas/6663e35fcb436e09b5f949b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Entregas",
+								"6663e35fcb436e09b5f949b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarEntregasPorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Entregas/6663e35fcb436e09b5f949b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Entregas",
+								"6663e35fcb436e09b5f949b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletandoEntregas",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Entregas/6663e35fcb436e09b5f949b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Entregas",
+								"6663e35fcb436e09b5f949b7"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Nesta pasta temos as opções de CRIAR, ATUALIZAR, DELETAR, BUSCAR TODOS OU POR ID as entregas cadastradas atravéz das requisições."
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "buscandoProdutos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscandoProdutosPorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/produtos/6663fceb227e2b44c0e507ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"6663fceb227e2b44c0e507ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criandoProdutos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pizza de bacon\",\r\n    \"descricao\": \"Mussarela, bacon, orégano\",\r\n    \"valorProduto\": \"50\",\r\n    \"totalProduto\": \"????????\",\r\n    \"observacoes\": \"Mais assada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizandoProdutos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Deletado\",\r\n    \"descricao\": \"Mussarela, bacon, orégano\",\r\n    \"valorProduto\": \"15\",\r\n    \"totalProduto\": \"scrrr\",\r\n    \"observacoes\": \"Mais assada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/produtos/666a2bfe28fd348a5098f0d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"666a2bfe28fd348a5098f0d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletandoProdutos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/produtos/666a2c1c28fd348a5098f0d6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"666a2c1c28fd348a5098f0d6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Nesta pasta temos as opções de CRIAR, ATUALIZAR, DELETAR, BUSCAR TODOS OU POR ID os produtos cadastrados atravéz das requisições."
+		},
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria\",\r\n    \"email\": \"maria@gmail.com\",\r\n    \"senha\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"maria@gmail.com\",\r\n    \"senha\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Para ter acesso o usuário precisa efetuar o login inserindo sua senha e o login.\n\nAqui é feita a autenticação para saber se o funcionário tem login cadastrado."
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoiTWFyaWEiLCJlbWFpbCI6Im1hcmlhQGdtYWlsLmNvbSIsImlhdCI6MTcxODMzOTE3MiwiZXhwIjoxNzE4MzM5MjMyfQ.zvdYH5W54Hwxv-83SEAkU9KUSdTfhIGK1xgs1u9bHcw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

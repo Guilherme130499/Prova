@@ -13,13 +13,8 @@ const schema = new mongoose.Schema({
     },
 
     endereco: {
-        cep: String,
-        uf: String,
-        localidade: String,
-        bairro: String,
-        logradouro: String,
-        numero: String,
-        complemento: String,        
+        type: String, 
+        required: true               
     },
 
     email: {

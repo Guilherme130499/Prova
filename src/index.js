@@ -19,11 +19,16 @@ DBConnect()
 app.use(express.json())
 //Permite que a aplicação processe as requisições em JSON
 
+const autenticacaoRoutes = require('./routes/autenticacao.routes')
+app.use(autenticacaoRoutes)
+
+const { checkToken } = require('./validators/AutenticacaoValidator')
+
 const routes = require('./routes/routes')
 //Importa um módulo localizado em routes
 
-app.use(routes)
-//Configura a aplicação para usar as rotas definidas no módulo routes
+app.use(checkToken, routes)
+
 
 
 app.listen(PORT, () => {

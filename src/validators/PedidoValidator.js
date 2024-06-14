@@ -5,10 +5,19 @@ const schema = yup.object().shape(
         cliente: yup
             .string("Campo precisa ser um texto")
             .required("Campo obrigatório"),
+
+        funcionario: yup
+            .string("Campo precisa ser um texto0")
+            .required("Campo obrigatório"),
         
-        produtos: yup
-           .string("Campo precisa ser um texto")
-           .required("Campo obrigatório"),
+        produtos: yup.array().of(
+            yup.object().shape({
+            item: yup
+            .string("Campo precisa ser um texto")
+            .required("Campo obrigatório"),
+            })
+        ).required("Campo obrigatório"),
+
 
         statusPedido: yup
            .string("Campo precisa ser um texto")
@@ -33,13 +42,10 @@ function validarPedido(req, res, next) {
     .then(() => next())
     .catch(err => {
         
-            const erros = err.inner.map(e => {
-                const erro = {
+            const erros = err.inner.map(e => ({                
                     campo: e.path,
-                    erros: e.erros
-                }
-                return erro
-            })
+                    erros: e.erros                                
+            }))
 
             res.status(400).json(
                 {

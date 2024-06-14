@@ -11,7 +11,7 @@ const schema = yup.object().shape(
         .required("Campo obrigatório"),
 
         valorProduto: yup
-        .string("Campo precisa ser um texto!")
+        .number("Campo precisa ser um número!")
         .required("Campo obrigatório"),
 
         totalProduto: yup

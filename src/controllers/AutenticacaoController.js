@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 
 
 async function registrar(req, res) {
-    const {nome, email, senha } = req.body
+    const { nome, email, senha } = req.body
 
     const usuario = await Usuario.findOne({ email })
 
@@ -16,7 +16,7 @@ async function registrar(req, res) {
         return res.status(400).json({ mensagem: "Este e-mail já está cadastrado!" })
     }
 
-    const hash = await bcrypt.hash(senha, 5)
+    const hash = await bcrypt.hash(senha, 10)
 
     const novoUsuario = new Usuario(
         {
@@ -54,7 +54,7 @@ async function login(req, res) {
         },
         JWT_SECRET,
         {
-            expiresIn: '40m'
+            expiresIn: '10m'
         }
     )
 
@@ -64,4 +64,9 @@ async function login(req, res) {
             token
         }
     )
+}
+
+module.exports = {
+    registrar,
+    login
 }

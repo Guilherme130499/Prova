@@ -8,12 +8,21 @@ const schema = new mongoose.Schema(
         type: mongoose.Types.ObjectId,
         ref: 'cliente',
         required: true
-        },         
+        },      
+        
+    funcionario: { 
+        type: mongoose.Types.ObjectId,
+        ref: 'funcionario',
+        required: true 
+        },
 
-    produtos: {
-        type: String,        
-        required: true
-    },
+    produtos:[{
+        item: {
+            type: mongoose.Types.ObjectId,
+            ref: 'produto',        
+            required: true
+    }
+    }],
     
     statusPedido: {
         type: String,
@@ -31,7 +40,7 @@ const schema = new mongoose.Schema(
     }, 
 
     valorPedido: {
-        type: String,        
+        type: Number,        
         required: true
     },      
     
